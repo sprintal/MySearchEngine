@@ -86,6 +86,17 @@ public class MySearchEngine
                 System.out.println(resultList.get(index) + " " + decimalFormat.format(result.get(resultList.get(index))));
             }
         }
+        else if (instruct.equals("correct"))
+        {
+            WordCorrection corrector = new WordCorrection();
+            String[] inputtedList = Arrays.copyOfRange(args, 1, args.length);
+            String inputtedString = new String();
+            for (String inputted : inputtedList)
+            {
+                inputtedString = inputtedString + " " + inputted;
+            }
+            corrector.correction(inputtedString);
+        }
         else
         {
             System.out.println("Error, please enter a valid instruction.");
